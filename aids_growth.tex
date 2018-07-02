@@ -1,0 +1,126 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{calc}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{fancyheadings}
+ 
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{rotating}
+\usepackage{harvard}
+\usepackage{aer}
+\usepackage{aertt}
+\usepackage{verbatim}
+\usepackage{array}
+\usepackage{multirow}
+
+\setlength{\voffset}{-0.25in}
+\setlength{\topmargin}{0pt}
+\setlength{\hoffset}{0pt}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{.4in}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+\setlength{\marginparpush}{0pt}
+\setlength{\footskip}{.1in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9.25in}
+\setlength{\parskip}{0pc}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\prbf}[1]{\textbf{#1}}
+\newcommand{\prit}[1]{\textit{#1}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdm}{\begin{displaymath}}
+\newcommand{\edm}{\end{displaymath}}
+\newcommand{\script}[1]{\begin{cal}#1\end{cal}}
+\newcommand{\citee}[1]{\citename{#1} (\citeyear{#1})}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\ds}{\displaystyle}
+
+\newcommand{\app}
+{
+\appendix
+}
+
+\newcommand{\appsection}[1]
+{
+\let\oldthesection\thesection
+\renewcommand{\thesection}{Appendix \oldthesection}
+\section{#1}\let\thesection\oldthesection
+\renewcommand{\theequation}{\thesection\arabic{equation}}
+\setcounter{equation}{0}
+}
+
+\pagestyle{fancyplain}
+\lhead{}
+\chead{Growth and Risky Sexual Behavior with Conditional Cash Transfers}
+\rhead{\thepage}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{singlespace}
+\title{Growth and Risky Sexual Behavior with Conditional Cash Transfers\footnote{Preliminary and Incomplete.  All errors are our own.}}
+\date{\today}
+\author{
+Pedro de Araujo\footnote{\textit{Mailing address}: 14 E. Cache La Poudre Street, Colorado Springs, CO  80903.  \textit{Phone}: (719)389-6470.\newline  \textit{E-mail}: Pedro.deAraujo@ColoradoCollege.edu.}\\Department of Economics and Business\\Colorado College \\\\James Murray\footnote{\textit{Mailing address}: 1725 State St., La Crosse, WI  54601. \textit{Phone}: (608)785-5140.\newline  \textit{E-mail}: murray.jame@uwlax.edu.}\\Department of Economics\\University of Wisconsin - La Crosse
+}
+
+\maketitle
+
+\thispagestyle{empty}
+
+\abstract{We develop an overlapping generations model in which agents make decisions about their children's consumption, education, and labor supply while at the same time engaging in risky sexual behavior that can lead to contracting HIV, causing their demise and putting their family's lifetime income at risk.  We examine at the effect that a conditional cash transfer can on optimal decisions and macroeconomic outcomes, when a transfer is paid to surviving family members in the event the head of the household dies, but not from complications arising from AIDS.} \newline 
+
+\noindent \textit{Keywords}: AIDS, Overlapping Generations, Human Capital, Growth. \\
+\noindent \textit{JEL classification}: H51, I18, I38.
+\end{singlespace}
+\end{titlepage}
+
+\newpage
+
+\section{Model}
+
+Adults in this model maximize expected utility by choosing optimal levels of consumption $(c)$ in periods 2 (day and night) and 3, family consumption $(f)$ in period 2, children's education $(n)$, and number of sexual partners $(m)$. Because it is not certain that an adult will survive through the night time due to either exogenously dying with probability $(1-\delta)$ or dying from HIV with probability $1-\pi(m_t)$, the expected utility takes the following form:
+\begin{eqnarray} E(U_t) &=& \alpha_1 ln(c_t^d) + \alpha_1 \pi(m_t)\delta ln(c_t^n) + \alpha_2 ln(f_t^d) + \alpha_2 \pi(m_t)\delta ln(f_t^{nA}) +  \alpha_2 (1-\delta)\pi(m_t)ln(f_t^{nD}) \nonumber \\
+&+& \alpha_2 (1-\pi(m_t))ln(f_t^{nH}) + \alpha_3 \pi(m_t)\delta ln(h_{t+1}^{nA}) + \alpha_3 (1-\delta)\pi(m_t)ln(h_{t+1}^{nD}) \\
+&+& \alpha_3 (1-\pi(m_t))ln(h_{t+1}^{nH}) + \alpha_4 \pi(m_t)\delta^2 ln(c_{t+1}) + \gamma ln(m_t) \nonumber
+\end{eqnarray}
+The budget constraints depends on the likelihood of surviving until next period and are given by:
+\beq w_t^dh_t + w_t^nh_t + w_t^dh_t(1-n_t^d)\Delta + w_t^nh_t(1-n_t^{nA})\Delta = c_t^d + c_t^n + f_t^d + f_t^{nA} + \frac{1}{1+r_t}c_{t+1} \eeq
+with probability $\pi(m_t)\delta$.
+\beq w_t^dh_t + w_t^dh_t(1-n_t^d)\Delta + w_t^nh_t(1-n_t^{nD})\Delta + b_t = c_t^d + f_t^d + f_t^{nD} \eeq
+with probability $(1-\delta)\pi(m_t)$.
+\beq w_t^dh_t + w_t^dh_t(1-n_t^d)\Delta + w_t^nh_t(1-n_t^{nH})\Delta = c_t^d + f_t^d + f_t^{nH} \eeq
+with probability $(1-\pi(m_t))$.
+
+Human capital $(h = h^d + h^n)$ evolves according to:
+\beq h_{t+1}^{nA} = Bn_t^dh_t + Bn_t^{nA}h_t \eeq
+with probability $\pi(m_t)\delta$,
+\beq h_{t+1}^{nD} = Bn_t^dh_t + Bn_t^{nD}h_t \eeq
+with probability $(1-\delta)\pi(m_t)$,
+\beq h_{t+1}^{nH} = Bn_t^dh_t + Bn_t^{nH}h_t \eeq
+with probability $(1-\pi(m_t))$.
+
+The probability of not dying from HIV is given by:
+
+\beq \pi(m_t) = 1-\theta m_t \eeq
+
+
+\end{document}
+
+
